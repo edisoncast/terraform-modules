@@ -8,7 +8,6 @@ data "template_file" "template" {
     memory_units            = "${var.memory_units}"
     memory_reservation      = "${var.memory_reservation}"
     volume_container_path   = "${var.volume_container_path}"
-    volume_container_path_2 = "${var.volume_container_path_2}"
     container_port          = "${var.container_port}"
     host_port               = "${var.host_port}"
     protocol                = "${var.protocol}"
@@ -27,8 +26,4 @@ resource "aws_ecs_task_definition" "task_definition" {
     host_path = "${var.volume_host_path}"
   }
 
-  volume {
-    name      = "${var.container_name}-config-2"
-    host_path = "${var.volume_host_path_2}"
-  }
 }

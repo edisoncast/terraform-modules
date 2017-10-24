@@ -27,7 +27,3 @@ variable "volume_container_path" {}
 variable "volume_host_path" {}
 
 variable "awslogs_group_name" {}
-
-variable "volume_container_path_2" {}
-
-variable "volume_host_path_2" {}
