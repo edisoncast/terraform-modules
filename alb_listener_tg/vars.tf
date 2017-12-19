@@ -35,3 +35,5 @@ variable "matcher" {
 variable "deregistration_delay" {
 	default = "300"
 }
+
+variable "domain" {}

@@ -26,3 +26,18 @@ resource "aws_alb_listener" "listener" {
      type = "forward"
    }
 }
+
+resource "aws_lb_listener_rule" "host_based_routing" {
+  listener_arn = "${aws_alb_listener.listener.arn}"
+  priority     = 99
+
+  action {
+    type             = "forward"
+    target_group_arn = "${aws_alb_target_group.target_group.arn}"
+  }
+
+  condition {
+    field  = "host-header"
+    values = ["${var.domain}"]
+  }
+}
