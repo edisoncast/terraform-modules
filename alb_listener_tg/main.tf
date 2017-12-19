@@ -38,6 +38,6 @@ resource "aws_lb_listener_rule" "host_based_routing" {
 
   condition {
     field  = "host-header"
-    values = ["${var.domain}"]
+    values = "${var.domain}"
   }
 }
