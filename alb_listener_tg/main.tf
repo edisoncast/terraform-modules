@@ -28,7 +28,7 @@ resource "aws_alb_listener" "listener" {
 }
 
 resource "aws_lb_listener_rule" "host_based_routing" {
-  listener_arn = "${aws_alb_listener.listener.arn}"
+  listener_arn = "${var.alb_listener_id}"
   priority     = 99
 
   action {
@@ -38,6 +38,6 @@ resource "aws_lb_listener_rule" "host_based_routing" {
 
   condition {
     field  = "host-header"
-    values = ["${var.domain}"]    
+    values = ["${var.domain}"]
   }
 }
