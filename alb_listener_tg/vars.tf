@@ -38,6 +38,10 @@ variable "deregistration_delay" {
 
 variable "domain" {}
 
+variable "priority" {
+  default = 1
+}
+
 variable "alb_listener_id" {
   default = "arn:aws:elasticloadbalancing:us-east-1:433207076761:listener/app/mobility-staging/d3fc7e7da0e81d89/81978ce4b0946fd0"
 }
