@@ -32,6 +32,18 @@ variable "matcher" {
 	default = "200-299"
 }
 
+variable "stickiness_enabled" {
+  default = false
+}
+
+variable "stickiness_type" {
+  default = "lb_cookie"
+}
+
+variable "stickiness_cookie" {
+  default = "86400"
+}
+
 variable "deregistration_delay" {
 	default = "300"
 }

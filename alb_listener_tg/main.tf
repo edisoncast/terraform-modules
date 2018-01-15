@@ -14,6 +14,12 @@ resource "aws_alb_target_group" "target_group" {
     path                = "${var.health_check}"
     matcher             = "${var.matcher}"
   }
+
+  stickiness {
+   type = "${var.stickiness_type}"
+   enabled = "${var.stickiness_enabled}"
+   cookie_duration = "${var.stickiness_cookie}"
+  }
 }
 
 resource "aws_alb_listener" "listener" {
